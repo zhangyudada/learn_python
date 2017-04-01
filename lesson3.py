@@ -150,7 +150,7 @@
 #         account_login()
 # account_login()
 
-#17
+# #17
 # for every_letter in 'Hello world':
 #     print(every_letter)
 # for num in range(1,11):
@@ -225,7 +225,7 @@
 #             print(str(i), end=' ')
 # even_within_100()
 
-#P72 综合练习，猜大小
+# #P72 综合练习，猜大小
 # import random
 # def small_game():
 #     print('<<<< GAME STARTS! >>>>')
@@ -330,4 +330,117 @@
 #                 print('No such a operator.')
 # pho_num_check()
 
-#21
+# #21列表list
+# #列表的增删改查
+# fruit = ['pineapple','pear']
+# print(fruit)
+# #增
+# fruit.insert(1,'grape')
+# print(fruit)
+# fruit[0:0] = ['orange']
+# print(fruit)
+# #删
+# fruit.remove('grape')
+# print(fruit)
+# del fruit[1:2]
+# print(fruit)
+# #改
+# fruit[0] = 'Grapefruit'
+# print(fruit)
+# #查
+# periodic_table = ['H','He','Li','Be','B','C','N','O','F','Ne']
+# print(periodic_table[0])
+# print(periodic_table[-2])
+# print(periodic_table[0:3])
+# print(periodic_table[-10:-7])
+# print(periodic_table[-10:])
+# print(periodic_table[:9])
+
+# # 22字典Dict
+# NASDAQ_code = {
+#     'BIDU':'Baidu',
+#     'SINA':'Sina'
+# }
+# print(NASDAQ_code)
+# # 增
+# NASDAQ_code['YOKU'] = 'Youku'
+# print(NASDAQ_code)
+# NASDAQ_code.update({'FB':'Facebook','TSLA':'Tesla'})
+# print(NASDAQ_code)
+# # 删
+# del NASDAQ_code['FB']
+# print(NASDAQ_code)
+# # 改
+# NASDAQ_code['BIDU'] = 'baidu'
+# print(NASDAQ_code)
+# # 查
+# print(NASDAQ_code['BIDU'])
+
+# # 23元组Tuple
+# # 只可查询，不能增删改
+# # 查
+# letters = ('a','b','c','d','e','f','g')
+# print(letters[0])
+
+# # 24集合Set
+# # 集合不能被切片和索引，能做集合运算，能增删
+# # 增
+# a_set = {1,2,3,4}
+# print(a_set)
+# a_set.add(5)
+# print(a_set)
+# # 删
+# a_set.discard(3)
+# print(a_set)
+
+# # 25多重循环
+# num_list = [6,2,7,4,1,3,5]
+# sorted_list_shunxu = sorted(num_list)
+# sorted_list_nixu = sorted(num_list,reverse=True)
+# print(num_list)
+# print(sorted_list_shunxu)
+# print(sorted_list_nixu)
+# str_list = ['x','y','z','l','m','n','i','j','k']
+# for a,b in zip(sorted(num_list),str_list):
+#     print(b,'is',a)
+
+# # 26推倒式
+# import time
+# a = []
+# t0 = time.clock()*1000
+# for i in range(1,20000):
+#     a.append(i)
+# print(time.clock()*1000 - t0,'ms process time')
+# t0 = time.clock()*1000
+# b = [i for i in range(1,11)]
+# print(time.clock()*1000 - t0,'ms process time')
+# c = [i**2 for i in range(1,10)]
+# d = [j**2 for j in range(1,10)]
+# e = [n for n in range(1,10) if n%2==0]
+# f = [letter.lower() for letter in 'QWERTYUIOP']
+# print(c)
+# print(d)
+# print(e)
+# print(f)
+# g = {i:i+1 for i in range(1,10)}
+# h = {i:j for i,j in zip(range(1,6),'abcde')}
+# l = {i:j.upper() for i,j in zip(range(1,6),'abcde')}
+# print(g)
+# print(h)
+# print(l)
+# letters = ['a','b','c','d','e','f','g','h','i','j','k']
+# for num,letter in enumerate(letters):
+#     print(letter,'is',num+1)
+
+# # 27 词频统计
+# import string
+# import time
+# t0 = time.clock()
+# path = 'E:/Python/WebCrawler/TextDic/Walden.txt'
+# with open(path,'r') as text:
+#     words = [raw_words.strip(string.punctuation).lower() for raw_words in text.read().split()]
+#     words_index = set(words)
+#     counts_dict = {index:words.count(index) for index in words_index}
+# for word in sorted(counts_dict,key=lambda x: counts_dict[x],reverse=True):
+#     print('{} -- {} times'.format(word,counts_dict[word]))
+# print(time.clock() - t0,'seconds process time')
